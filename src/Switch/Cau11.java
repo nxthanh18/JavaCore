@@ -10,8 +10,15 @@ import java.util.Scanner;
 /**
  *
  * @author genharunari
+ * 
+ * : Nhập tháng và năm. In ra màn hình tháng đó có bao nhiêu ngày. 
+Ví dụ:
+Nhập 3 ⇒ Thang 3 co 31 ngay
+Nhap 13 ⇒ Khong co thang 13
+Ghi chú: cách xác định năm nhuận: năm chia hết cho 4 và không chia hết cho 100, hoặc chia hết cho 400. 
+
  */
-public class Ex2 {
+public class Cau11 {
     public static void main(String[] args) {
         int m, y;
         

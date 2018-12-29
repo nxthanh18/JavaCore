@@ -10,8 +10,14 @@ import java.util.Scanner;
 /**
  *
  * @author genharunari
+ * 
+ * Viết chương trình nhập số nguyên n (1  10) và in ra từ tiếng anh tương ứng
+	Ví dụ: n = 3  THREE
+		n = 9  NINE
+		n = 11  UNKNOW
+
  */
-public class Ex {
+public class Cau8 {
     public static void main(String[] args) {
         int n;
 
