@@ -11,6 +11,8 @@ import java.util.Scanner;
  *
  * @author genharunari
  * 
+ * ERROR
+ * 
  * Viết chương trình nhập 3 số (int) a, b, c là 3 cạnh của một tam giác. In ra màn hình là tam giác gì? (cân, đều, vuông, vuông cân, tam giác thường, không phải tam giác)
 	Hướng dẫn: Sử dụng lớp Math.xxx() để sử dụng các hàm sẳn
 	Ví dụ: Math.sqrt(123) tính căn bậc 2 của số 123	

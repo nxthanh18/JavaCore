@@ -11,24 +11,19 @@ import java.util.Scanner;
  *
  * @author genharunari
  */
-public class Bai3 {
+public class Bai1w {
     public static void main(String[] args) {
-        int n, sumc = 0, suml = 0;
-        int i = 1;       
+        int n, sum = 0;
+        int i = 1;
         
         Scanner scanner = new Scanner(System.in);
-        System.out.print("n = ");
+        System.out.print("Nhap n = ");
         n = scanner.nextInt();
         
         while(i <= n){
-            if(i % 2 == 0){
-                sumc += i;
-            }else{
-                suml += i;
-            }
+            sum += i;
             i++;
         }
-        System.out.println("Sum chan: " + sumc);
-        System.out.println("Sum le: " + suml);
-    }    
+        System.out.println("Sum = " + sum);
+    }
 }

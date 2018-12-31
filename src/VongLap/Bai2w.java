@@ -10,21 +10,20 @@ import java.util.Scanner;
 /**
  *
  * @author genharunari
- * 
- * 
  */
-public class Bai4 {
+public class Bai2w {
     public static void main(String[] args) {
-        int n;
+        int n, sum = 0;
         int i = 1;
         
         Scanner scanner = new Scanner(System.in);
         System.out.print("n = ");
         n = scanner.nextInt();
         
-        while(i <= 10){
-            System.out.println(n + " x " + i + " = " + (n * i));
-            i++;
-        }        
+        while(i <= n){
+            sum += i;
+            i += 2;
+        }
+        System.out.println("n = " + sum);
     }
 }

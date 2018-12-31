@@ -11,19 +11,16 @@ import java.util.Scanner;
  *
  * @author genharunari
  */
-public class Bai1 {
+public class Bai4f {
     public static void main(String[] args) {
-        int n, sum = 0;
-        int i = 1;
+        int n;
         
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhap n = ");
+        System.out.print("n = ");
         n = scanner.nextInt();
         
-        while(i <= n){
-            sum += i;
-            i++;
+        for(int i = 1; i <= 10; i ++){
+            System.out.println(n + " x " + i + " = " + (n*i));
         }
-        System.out.println("Sum = " + sum);
     }
 }
