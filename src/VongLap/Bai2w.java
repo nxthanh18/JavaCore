@@ -10,6 +10,7 @@ import java.util.Scanner;
 /**
  *
  * @author genharunari
+ 
  */
 public class Bai2w {
     public static void main(String[] args) {

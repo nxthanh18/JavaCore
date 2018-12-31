@@ -9,8 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author genharunari
- * 
+ * @author genharunari 
  * 
  */
 public class Bai4w {
