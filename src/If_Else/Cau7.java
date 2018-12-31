@@ -28,6 +28,24 @@ public class Cau7 {
         System.out.print("Canh c: ");
         c = scanner.nextInt();
         
+        if((a + b > c) && (a + c > b) && (b + c > a)){            
+            if(a == b && a == c){
+                System.out.println("Tam giac deu");
+            }else if((a == b && a != c && b != c) | (a == c && a != b && c != b) | (b == c && b != a && c != a)){
+                if((c*c == a*a + b*b) && (a*a == b*b + c*c) && (b*b == a*a + c*c)){
+                    System.out.println("Tam giac vuong can");
+                }else{
+                    System.out.println("Tam giac can");
+                }
+            }else{
+                System.out.println("Tam giac thuong");
+            }            
+        }else{
+            System.out.println("Khong phai tam giac");
+        }
+    }
+}
+        /*
         if(a > 0 && b > 0 && c > 0){
             if(a == b && a == c){
                 System.out.println("Tam giac deu");
@@ -47,3 +65,4 @@ public class Cau7 {
         }
     }    
 }
+*/
