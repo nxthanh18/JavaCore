@@ -3,27 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package VongLap;
+package Loops;
 
 import java.util.Scanner;
 
 /**
  *
  * @author genharunari
+ 
  */
-public class Ex2 {
+public class Bai1w {
     public static void main(String[] args) {
         int n, sum = 0;
         int i = 1;
         
         Scanner scanner = new Scanner(System.in);
-        System.out.print("n = ");
+        System.out.print("Nhap n = ");
         n = scanner.nextInt();
         
         while(i <= n){
             sum += i;
-            i += 2;
+            i++;
         }
-        System.out.println("sum = " + sum);
+        System.out.println("Sum = " + sum);
     }
 }
