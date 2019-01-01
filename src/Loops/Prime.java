@@ -30,7 +30,7 @@ public class Prime {
             // Nếu count là 2, tức là số đó chỉ chia hết cho 2 số là 1 và chính nó
                 System.out.println(number);
                 }
-                number++; // Nhớ tăng number để kiểm tra số tiếp theo
+            number++; // Nhớ tăng number để kiểm tra số tiếp theo
         }
     }
 }
