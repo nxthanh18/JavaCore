@@ -10,21 +10,22 @@ import java.util.Scanner;
 /**
  *
  * @author genharunari
- * 
- * Nhập 1 số nguyên n, xuất tổng các số lẻ từ 1 đến n
+ * Nhap n: 10 <= n <= 20
  */
-public class Bai2dw {
+public class Exdw2 {
     public static void main(String[] args) {
-        int n, sum = 0, i = 0;
+        int n;
         
         Scanner scanner = new Scanner(System.in);
-        System.out.print("n = ");
-        n = scanner.nextInt();
         
         do{
-            sum += i;
-            i += 2;
-        }while(i <= n);
-        System.out.println("Sum = " + sum);
+            System.out.print("n = ");
+            n = scanner.nextInt();
+            
+            if(n < 10 || n > 20){
+                System.out.println("Ban phai nhap khoang tu 10 - 20");
+            }
+        }while(n < 10 || n > 20);
+        System.out.println("So vua nhap n = " + n);
     }
 }

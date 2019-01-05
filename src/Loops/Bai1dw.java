@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class Bai1dw {
     public static void main(String[] args) {
-        int n, sum = 0, i = 1;
+        int n, sum = 0, i = 0;
         
         Scanner scanner = new Scanner(System.in);
         System.out.print("n = ");
