@@ -19,21 +19,17 @@ n = 6 → n!! = 2 * 4 * 6 = 48
  */
 public class Bai6dw {
     public static void main(String[] args) {
-        int n, sumc = 1, suml = 1, i = 1;
+        int n, gt = 1;
         
         Scanner scanner = new Scanner(System.in);
         System.out.print("n = ");
         n = scanner.nextInt();
         
+        int i = n;
         do{
-            if(i%2 == 0){
-                sumc *= i;
-            }else{
-                suml *=i;
-            }
-            i++;
-        }while(i <= n);
-        System.out.println("Sum chan = " + sumc);
-        System.out.println("Sum le = " + suml);
+            gt *= i;
+            i -= 2;
+        }while(i >= 1);
+        System.out.println("Giai thua: " + gt);
     }
 }
