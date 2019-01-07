@@ -11,18 +11,22 @@ import java.util.Scanner;
  *
  * @author genharunari
  * 
- * Nhập số nguyên n. Tính S = 1^2 + 2^2 + 3^2 + ... + n^2
+ * Nhập số nguyên n. Tính S = 1 + 1.2 + 1.2.3 + 1.2.3.4 + … + 1.2.3...n
  */
-public class Bai1 {
+public class Bai5w {
     public static void main(String[] args) {
-        int n, sum = 0, i = 1;
+        int n, i = 1, sum =0, exponentiation = 1;
         
         Scanner scanner = new Scanner(System.in);
         System.out.print("n = ");
         n = scanner.nextInt();
         
         while(i <= n){
-            sum += i;
+            exponentiation *= i;            
+            sum += exponentiation;
+            System.out.print(i + "!" + " + ");
+            i++;
         }
+        System.out.println("\n" + "Sum = " + sum);
     }
 }
