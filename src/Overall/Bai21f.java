@@ -5,32 +5,27 @@
  */
 package Overall;
 
-import static java.lang.Math.sqrt;
 import java.util.Scanner;
 
 /**
  *
  * @author genharunari
  * 
- * Cho số nguyên dương n. Kiểm tra xem n có phải là số chính phương hay không
+ * Nhập số nguyên n. Hãy tính tích các chữ số của số nguyên dương n
  */
-public class Bai18f {
+public class Bai21f {
     public static void main(String[] args) {
-        int n, a;
+        int n, tich = 1;
         
         Scanner scanner = new Scanner(System.in);
-        
         do{
             System.out.print("n = ");
             n = scanner.nextInt();
-        }while(n < 1);
+        }while(n < 0);
         
-        a = (int) sqrt(n);
-        
-        if((a*a) == n){
-            System.out.println(n + " la so chinh phuong");
-        }else{
-            System.out.println(n + " khong phai so chinh phuong");
+        for(;n > 0;n /=10){
+            tich *= n%10;
         }
+        System.out.println("Tich cac chu so cua so nguyen n = " + tich);
     }
 }
