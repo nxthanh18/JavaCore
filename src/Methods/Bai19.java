@@ -6,8 +6,6 @@
 package Methods;
 
 import java.util.Scanner;
-import static java.lang.Math.sqrt;
-
 /**
  *
  * @author genharunari
@@ -15,14 +13,15 @@ import static java.lang.Math.sqrt;
  * Liệt kê tất cả các số chính phương nhỏ hơn n(Sử dụng hàm kiểm tra số chính
 phương)
  */
-public class Bai19 {
-//    public static int isSquareNumber(int n){
-//        int a = 1;
-//        for(int i = 1;i < n;i++){
-//            a = (int) sqrt(i);
+public class Bai19 {    
+    public static boolean isSquareNumber(int a){
+        int temp = (int) Math.sqrt(a);        
+//        if((temp*temp) == a){
+//            return true;
 //        }
-//        return a;
-//    }
+//        return false;
+        return (temp*temp) == a;
+    }
     
     public static void main(String[] args) {
         int n;
@@ -30,13 +29,15 @@ public class Bai19 {
         do{
             System.out.print("n = ");
             n = scanner.nextInt();
+            if(n <= 0){
+                System.out.println("Nhap n > 0 !!!");
+            }
         }while(n <= 0);
         
-        int a = 1;
-        for(int i = 1;i < n;i++){
-            a = (int) sqrt(i);
-        }
-        
-        System.out.println(" " + a);
+        for(int i = 0;i < n;i++){
+            if(isSquareNumber(i)){
+                System.out.print(i + " ");
+            }
+        }        
     }
 }

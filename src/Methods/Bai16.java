@@ -11,16 +11,17 @@ import java.util.Scanner;
  *
  * @author genharunari
  * 
- * Nhập số nguyên n. Viết hàm kiểm tra các chữ số của số nguyên dương n có tăng
+ * Nhập số nguyên n > 100. Viết hàm kiểm tra các chữ số của số nguyên dương n có tăng
 dần từ trái sang phải hay không
  */
 public class Bai16 {
-    public static boolean isUpNumber(int n){
-        int temp = n%10;
-        n /=10;
-        for(;n > 0;n /= 10){
-            if(temp > n%10){
-                
+    public static boolean isIncreaseLeftToRight(int a){
+        int after = a%10;
+        a /= 10;
+        for(;a != 0;a /= 10){
+            int before = a%10;
+            if(before <= after){
+                after = before;
             }else{
                 return false;
             }
@@ -34,8 +35,12 @@ public class Bai16 {
         do{
             System.out.print("n = ");
             n = scanner.nextInt();
-        }while(n <= 0);
+        }while(n <= 100);
         
-        System.out.println(isUpNumber(n));
+        if(isIncreaseLeftToRight(n)){
+            System.out.println(n + " Tang dan tu trai sang phai");
+        }else{
+            System.out.println(n + " Khong tang dan tu trai sang phai");
+        }
     }
 }

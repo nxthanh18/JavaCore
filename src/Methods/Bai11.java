@@ -15,8 +15,8 @@ import java.util.Scanner;
  */
 public class Bai11 {
     public static int reverseNumbers(int n){
-        int tmp, res =0;
-        for(;n > 0;n /= 10){
+        int tmp, res = 0;
+        for(;n != 0;n /= 10){
             tmp = n%10;
             res = res*10 + tmp;            
         }
