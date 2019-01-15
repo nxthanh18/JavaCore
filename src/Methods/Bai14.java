@@ -16,13 +16,20 @@ không
  */
 public class Bai14 {
     public static boolean isOddNumber(int n){
-        int count = 0, countt = 0;
-        for(;n > 0;n /= 10){
+        int count = 0, countt = 0;        
+        while(n != 0){
             int temp = n%10;
             if(temp%2 == 1){
                 count++;
             }
             countt++;
+            n /= 10;
+//        for(;n > 0;n /= 10){
+//            int temp = n%10;
+//            if(temp%2 == 1){
+//                count++;
+//            }
+//            countt++;
         }if(count == countt){
             return true;
         }

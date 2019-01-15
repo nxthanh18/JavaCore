@@ -11,25 +11,28 @@ import java.util.Scanner;
  *
  * @author genharunari
  * 
- * Nhập số nguyên n. Viết hàm tìm số đảo ngược của số nguyên dương n (n > 0)
+ * Nhập số nguyên N. Viết chương trình tìm số nguyên dương m lớn nhất sao cho 1 +
+2 + … + m < N
  */
-public class Bai11 {
-    public static int reverseNumbers(int n){
-        int tmp, res = 0;
-        for(;n != 0;n /= 10){
-            tmp = n%10;
-            res = res*10 + tmp;            
+public class Bai33 {
+    public static int searchMaxNumber(int n){
+        int i = 1, sum = 0;
+        while(sum < n){
+            i++;
+            sum += i;
         }
-        return res;
+        return i - 1;
     }
+    
     public static void main(String[] args) {
         int n;
+        
         Scanner scanner = new Scanner(System.in);
         do{
             System.out.print("n = ");
             n = scanner.nextInt();
-        }while(n != 0);
+        }while(n <= 0);
         
-        System.out.println("So dao nguoc cua so " + n + " = " + reverseNumbers(n));
+        System.out.println(searchMaxNumber(n));
     }
 }
