@@ -7,26 +7,27 @@ package Methods;
 
 import java.util.Scanner;
 
+
 /**
  *
  * @author genharunari
  * 
- * Viết chương trình nhập số n và in ra màn hình tam giác sau
-Ví dụ n = 4
-* * * *
-* * *
+ * Vẽ hình chữ nhật rỗng kích thước n x m
+Ví dụ n = 4, m = 5
+* * * * *
 * *
-*
+* *
+* * * * *
  */
-public class Bai39 {
+public class Bai42 {
     public static Scanner sc = new Scanner(System.in);
-    public static int printTriangleNguoc(int n){
-        for(int i = n - 1;i >= 0;i--){
-            for(int j = 0;j < n;j++){
+    public static int printRectangleRong(int n, int m){
+        for(int i = 0;i < n;i++){
+            for(int j = 0;j < m; j++){
                 if(j <= i){
                     System.out.print(" * ");
                 }else{
-                    System.out.print("  ");
+                    System.out.print(" * ");
                 }
             }
             System.out.println("  ");
@@ -34,12 +35,14 @@ public class Bai39 {
         return n;
     }
     public static void main(String[] args) {
-        int n;
+        int n, m;
         do{
             System.out.print("n = ");
             n = sc.nextInt();
-        }while(n <= 0);
+            System.out.print("m = ");
+            m = sc.nextInt();
+        }while(n <= 0);     
         
-        System.out.println(printTriangleNguoc(n) + "\b");
+        System.out.println(printRectangleRong(n, m)+ "\b");
     }
 }

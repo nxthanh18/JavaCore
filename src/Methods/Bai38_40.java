@@ -18,7 +18,7 @@ Ví dụ n = 4
 * * *
 * * * *
  */
-public class Bai38 {
+public class Bai38_40 {
     public static Scanner sc = new Scanner(System.in);
     
     public static int printTriangle(int n){
