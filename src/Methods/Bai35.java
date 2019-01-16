@@ -53,7 +53,7 @@ public class Bai35 {
     //1/3/2018 = 31 + 28 +1
     public static void main(String[] args) {
         byte day, month;
-        int year, dayNumber;
+        int year;
         Scanner scanner = new Scanner(System.in);
         do{
             System.out.print("Day: ");
