@@ -10,13 +10,13 @@ import java.util.Scanner;
 /**
  *
  * @author genharunari
- * Viết chương trình nhập vào mảng một chiều số nguyên n phần tử (n > 0). Liệt kê
-các phần tử là số hoàn hảo
+ * Viết chương trình nhập vào mảng một chiều số nguyên n phần tử (n > 0). Tìm số
+chẵn cuối cùng trong mảng. Nếu mảng không có giá trị chẵn thì trả về -1
  */
-public class Bai5 {
+public class Bai8 {
     public static Scanner sc = new Scanner(System.in);
     public static void inputArray(int []array){
-        for(int i = 0; i < array.length; i++){
+        for(int i = 0; i < array.length;i++){
             System.out.print("(" + i + ") = ");
             array[i] = sc.nextInt();
         }
@@ -26,24 +26,13 @@ public class Bai5 {
             System.out.print(array[i] + "; ");
         }
     }
-    public static boolean isPerfectNumber(int n){
-        int sum = 0;
-        for(int i = 1;i <= n/2; i++){
-            if(n%i == 0){
-                sum += i;
+    public static int soChanCuoiCungArray(int n, int []array){
+        for(int i = 0; i < array.length;i++){
+            if(array[i]%2 == 0){
+                n = array[i];
             }
         }
-        if(sum == n){
-            return true;
-        }
-        return false;
-    }
-    public static void outputPerfectNumberArray(int []array){
-        for(int i = 0; i < array.length; i++){
-            if(isPerfectNumber(array[i])){
-                System.out.print(array[i] + "; ");
-            }
-        }
+        return n;
     }
     public static void main(String[] args) {
         int n;
@@ -61,7 +50,6 @@ public class Bai5 {
         inputArray(array);
         System.out.println("Mang vua nhap: ");
         outputArray(array);
-        System.out.println("So hoan hao trong mang la: ");
-        outputPerfectNumberArray(array);
+        System.out.println("\nSo chan cuoi cung trong mang: " + soChanCuoiCungArray(n, array));
     }
 }

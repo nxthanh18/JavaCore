@@ -5,18 +5,19 @@
  */
 package Arrays;
 
+import static java.lang.Math.sqrt;
 import java.util.Scanner;
 
 /**
  *
  * @author genharunari
  * Viết chương trình nhập vào mảng một chiều số nguyên n phần tử (n > 0). Liệt kê
-các phần tử là số hoàn hảo
+các phần tử là số chính phương
  */
-public class Bai5 {
+public class Bai6 {
     public static Scanner sc = new Scanner(System.in);
     public static void inputArray(int []array){
-        for(int i = 0; i < array.length; i++){
+        for(int i = 0; i < array.length;i++){
             System.out.print("(" + i + ") = ");
             array[i] = sc.nextInt();
         }
@@ -26,21 +27,17 @@ public class Bai5 {
             System.out.print(array[i] + "; ");
         }
     }
-    public static boolean isPerfectNumber(int n){
-        int sum = 0;
-        for(int i = 1;i <= n/2; i++){
-            if(n%i == 0){
-                sum += i;
-            }
-        }
-        if(sum == n){
+    public static boolean isSquareNumber(int n){
+        int a;
+        a = (int) sqrt(n);
+        if(n == a*a){
             return true;
         }
         return false;
     }
-    public static void outputPerfectNumberArray(int []array){
-        for(int i = 0; i < array.length; i++){
-            if(isPerfectNumber(array[i])){
+    public static void outputSquareNumber(int []array){
+        for(int i = 0;i < array.length;i++){
+            if(isSquareNumber(array[i])){
                 System.out.print(array[i] + "; ");
             }
         }
@@ -61,7 +58,7 @@ public class Bai5 {
         inputArray(array);
         System.out.println("Mang vua nhap: ");
         outputArray(array);
-        System.out.println("So hoan hao trong mang la: ");
-        outputPerfectNumberArray(array);
+        System.out.println("Cac phan tu la so chinh phuong: ");
+        outputSquareNumber(array);
     }
 }

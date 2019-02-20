@@ -10,13 +10,13 @@ import java.util.Scanner;
 /**
  *
  * @author genharunari
- * Viết chương trình nhập vào mảng một chiều số nguyên n phần tử (n > 0). Liệt kê
-các phần tử là số hoàn hảo
+ * Viết chương trình nhập vào mảng một chiều số nguyên n phần tử (n > 0). Sắp xếp
+mảng giảm dần
  */
-public class Bai5 {
+public class Bai13 {
     public static Scanner sc = new Scanner(System.in);
     public static void inputArray(int []array){
-        for(int i = 0; i < array.length; i++){
+        for(int i = 0; i < array.length;i++){
             System.out.print("(" + i + ") = ");
             array[i] = sc.nextInt();
         }
@@ -26,23 +26,21 @@ public class Bai5 {
             System.out.print(array[i] + "; ");
         }
     }
-    public static boolean isPerfectNumber(int n){
-        int sum = 0;
-        for(int i = 1;i <= n/2; i++){
-            if(n%i == 0){
-                sum += i;
-            }
-        }
-        if(sum == n){
-            return true;
-        }
-        return false;
-    }
-    public static void outputPerfectNumberArray(int []array){
+    public static void hoanVi(int []array){
+        int temp = array[0];
         for(int i = 0; i < array.length; i++){
-            if(isPerfectNumber(array[i])){
-                System.out.print(array[i] + "; ");
+            for(int j = i + 1; j < array.length; j++){
+                if(array[i] < array[j]){
+                    temp = array[j];
+                    array[j] = array[i];
+                    array[i] = temp;
+                }
             }
+        }
+    }
+    public static void output(int []array){
+        for(int i = 0; i < array.length; i++){
+            System.out.print(array[i] + " ");
         }
     }
     public static void main(String[] args) {
@@ -61,7 +59,8 @@ public class Bai5 {
         inputArray(array);
         System.out.println("Mang vua nhap: ");
         outputArray(array);
-        System.out.println("So hoan hao trong mang la: ");
-        outputPerfectNumberArray(array);
+        hoanVi(array);
+        System.out.println("\nSap xep mang tang dan: ");
+        output(array);
     }
 }
