@@ -29,7 +29,7 @@ public class Bai11 {
     public static int demSoLuongGiaTriTanCungBang5(int n, int []array){
         int count = 0;
         for(int i = 0; i < array.length; i++){
-            if(array[i]%10 == 5){
+            if(array[i] % 10 == 5){
                 count++;
             }
         }

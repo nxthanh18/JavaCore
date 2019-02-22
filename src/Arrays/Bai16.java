@@ -29,7 +29,7 @@ public class Bai16 {
     public static void positiveNumberUp(int []array){
         int temp = array[0];
         int temp2 = array[0];
-        for(int i = 0; i < array.length; i++){
+        for(int i = 0; i < array.length - 1; i++){
             for(int j = i + 1; j < array.length; j++){
                 if(array[i] > 0 && array[j] > 0){
                     if(array[i] > array[j]){
@@ -37,7 +37,7 @@ public class Bai16 {
                         array[j] = array[i];
                         array[i] = temp;
                     }
-                }else{
+                }else if(array[i] < 0 && array[j] < 0){
                     if(array[i] < array[j]){
                         temp2 = array[j];
                         array[j] = array[i];
@@ -45,11 +45,6 @@ public class Bai16 {
                     }
                 }
             }
-        }
-    }
-    public static void output(int []array){
-        for(int i = 0; i < array.length; i++){
-            System.out.print(array[i] + "; ");
         }
     }
     public static void main(String[] args) {
@@ -70,6 +65,6 @@ public class Bai16 {
         outputArray(array);
         positiveNumberUp(array);
         System.out.println("So duong Tang dan, Am giam dan: ");
-        output(array);
+        outputArray(array);
     }
 }

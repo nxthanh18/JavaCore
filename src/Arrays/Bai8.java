@@ -26,13 +26,13 @@ public class Bai8 {
             System.out.print(array[i] + "; ");
         }
     }
-    public static int soChanCuoiCungArray(int n, int []array){
-        for(int i = 0; i < array.length;i++){
-            if(array[i]%2 == 0){
-                n = array[i];
+    public static int soChanCuoiCungArray(int []array){
+        for(int i = array.length - 1; i >= 0; i--){
+            if(array[i] % 2 == 0){
+                return array[i];
             }
         }
-        return n;
+        return -1;
     }
     public static void main(String[] args) {
         int n;
@@ -50,6 +50,6 @@ public class Bai8 {
         inputArray(array);
         System.out.println("Mang vua nhap: ");
         outputArray(array);
-        System.out.println("\nSo chan cuoi cung trong mang: " + soChanCuoiCungArray(n, array));
+        System.out.println("\nSo chan cuoi cung trong mang: " + soChanCuoiCungArray(array));
     }
 }

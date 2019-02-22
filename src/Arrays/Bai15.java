@@ -41,7 +41,7 @@ public class Bai15 {
     }
     public static void primeNumber(int []array){
         int temp = array[0];
-        for(int i = 0; i < array.length; i++){
+        for(int i = 0; i < array.length - 1; i++){
             for(int j = i + 1; j < array.length; j++){
                 if(isPrimeNumber(array[i]) && isPrimeNumber(array[j])){
                     if(array[i] > array[j]){
@@ -51,11 +51,6 @@ public class Bai15 {
                     }
                 }
             }
-        }
-    }    
-    public static void output(int []array){
-        for(int i = 0; i < array.length; i++){
-            System.out.print(array[i] + "; ");
         }
     }
     public static void main(String[] args) {
@@ -76,6 +71,6 @@ public class Bai15 {
         outputArray(array);
         primeNumber(array);
         System.out.println("\nSap xep so nguyen to tang dan: ");
-        output(array);
+        outputArray(array);
     }
 }

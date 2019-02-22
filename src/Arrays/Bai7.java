@@ -26,14 +26,15 @@ public class Bai7 {
             System.out.print(array[i] + "; ");
         }
     }
-    public static int maxNumberArray(int n, int []array){
-        n = 0;
-        for(int i = 0; i < array.length; i++){
-            if(n < array[i]){
-                n = array[i];
+    public static int maxNumberArray(int []array){
+        int max = array[0];
+        
+        for(int i = 1; i < array.length; i++){
+            if(max < array[i]){
+                max = array[i];
             }
         }
-        return n;
+        return max;
     }
     public static void main(String[] args) {
         int n;
@@ -48,9 +49,10 @@ public class Bai7 {
         }while(n <= 0);
         
         array = new int[n];
+        
         inputArray(array);
         System.out.println("Mang vua nhap: ");
         outputArray(array);
-        System.out.println("\nSo lon nhat trong mang: " + maxNumberArray(n, array));
+        System.out.println("\nSo lon nhat trong mang: " + maxNumberArray(array));
     }
 }

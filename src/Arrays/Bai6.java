@@ -16,9 +16,10 @@ các phần tử là số chính phương
  */
 public class Bai6 {
     public static Scanner sc = new Scanner(System.in);
+    
     public static void inputArray(int []array){
         for(int i = 0; i < array.length;i++){
-            System.out.print("(" + i + ") = ");
+            System.out.print("a[" + i + "]= ");
             array[i] = sc.nextInt();
         }
     }
@@ -44,17 +45,17 @@ public class Bai6 {
     }
     public static void main(String[] args) {
         int n;
-        int []array;
         
         do{
-            System.out.print("n = ");
+            System.out.print("nhap so phan tu co trong mang = ");
             n = sc.nextInt();
             if(n <= 0){
                 System.out.println("Input again n > 0");
             }
         }while(n <= 0);
         
-        array = new int[n];
+        int []array = new int[n];
+        
         inputArray(array);
         System.out.println("Mang vua nhap: ");
         outputArray(array);

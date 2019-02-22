@@ -27,10 +27,11 @@ public class Bai14 {
         }
     }
     public static void hoanVi(int []array){
-        int temp = array[0];
-        for(int i = 0; i < array.length; i++){
+        int temp;
+        
+        for(int i = 0; i < array.length - 1; i++){
             for(int j = i + 1; j < array.length; j++){
-                if(array[i]%2 == 1 && array[j]%2 == 1){
+                if(array[i]%2 != 0 && array[j]%2 != 0){
                     if(array[i] > array[j]){
                         temp = array[j];
                         array[j] = array[i];
@@ -38,11 +39,6 @@ public class Bai14 {
                     }
                 }
             }
-        }
-    }
-    public static void output(int []array){
-        for(int i = 0; i < array.length; i++){
-            System.out.print(array[i] + " ");
         }
     }
     public static void main(String[] args) {
@@ -63,6 +59,6 @@ public class Bai14 {
         outputArray(array);
         hoanVi(array);
         System.out.println("Sap xep so le tang dan: ");
-        output(array);
+        outputArray(array);
     }
 }

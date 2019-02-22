@@ -28,7 +28,7 @@ public class Bai13 {
     }
     public static void hoanVi(int []array){
         int temp = array[0];
-        for(int i = 0; i < array.length; i++){
+        for(int i = 0; i < array.length - 1; i++){
             for(int j = i + 1; j < array.length; j++){
                 if(array[i] < array[j]){
                     temp = array[j];
@@ -36,11 +36,6 @@ public class Bai13 {
                     array[i] = temp;
                 }
             }
-        }
-    }
-    public static void output(int []array){
-        for(int i = 0; i < array.length; i++){
-            System.out.print(array[i] + " ");
         }
     }
     public static void main(String[] args) {
@@ -61,6 +56,6 @@ public class Bai13 {
         outputArray(array);
         hoanVi(array);
         System.out.println("\nSap xep mang tang dan: ");
-        output(array);
+        outputArray(array);
     }
 }

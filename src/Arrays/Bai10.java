@@ -26,10 +26,11 @@ public class Bai10 {
             System.out.print(array[i] + "; ");
         }
     }
-    public static int demSoLuongSoChanArray(int n, int []array){
-        n = 0;
+    public static int demSoLuongSoChanArray(int []array){
+        int n = 0;
+        
         for(int i = 0; i < array.length; i++){
-            if(array[i]%2 == 0){
+            if(array[i] % 2 == 0){
                 n++;
             }
         }
@@ -51,6 +52,6 @@ public class Bai10 {
         inputArray(array);
         System.out.println("Mang vua nhap: ");
         outputArray(array);
-        System.out.println("\nSo luong so chan trong mang: " + demSoLuongSoChanArray(n, array));
+        System.out.println("\nSo luong so chan trong mang: " + demSoLuongSoChanArray(array));
     }
 }
