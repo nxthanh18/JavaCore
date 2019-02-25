@@ -10,10 +10,9 @@ import java.util.Scanner;
 /**
  *
  * @author genharunari
- * Nhập ma trận n hàng, m cột (n > 0, m > 0). Tính tổng các giá trị nằm trên biên của
-ma trận
+ * Nhập ma trận n hàng, m cột (n > 0, m > 0). Liệt kê các dòng có tổng lớn nhất
  */
-public class Bai38 {
+public class Bai40 {
     public static Scanner sc = new Scanner(System.in);
     public static void input(int [][]a){
         int row = a.length;
@@ -35,18 +34,19 @@ public class Bai38 {
             System.out.println();
         }
     }
-    public static int sumNumberBien(int [][]a, int row, int col){
+    public static int sumRow(int [][]a, int col){
         int sum = 0;
-        for(int i = 0; i < row; i++){
+        for(int i = 0; i < a[0].length;i++){
             sum = sum + a[0][i];
-            sum = sum + a[col - 1][i];
-        }
-        for(int j = 1; j < col - 1; j++){
-            sum = sum + a[j][0];
-            sum = sum + a[j][row - 1];
         }
         return sum;
     }
+    public static void lietKeCacDongCoTongLonNhat(int [][]a, int row, int col){
+        for(int i = 0; i < row; i++){
+            
+        }
+    }
+    
     public static void main(String[] args) {
         int row, col;
         
@@ -70,6 +70,5 @@ public class Bai38 {
         input(a);
         System.out.println("Mang vua nhap: ");
         output(a);
-        System.out.println("Tong cac gia tri tren bien: " + sumNumberBien(a, row, col));
     }
 }
