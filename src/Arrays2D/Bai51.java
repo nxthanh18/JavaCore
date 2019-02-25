@@ -10,9 +10,9 @@ import java.util.Scanner;
 /**
  *
  * @author genharunari
- * Nhập ma trận n hàng, m cột (n > 0, m > 0). Liệt kê các dòng có tổng lớn nhất
+ * Nhập ma trận vuông (n x n). Sắp xếp chéo phụ giảm dần
  */
-public class Bai40 {
+public class Bai51 {
     public static Scanner sc = new Scanner(System.in);
     public static void input(int [][]a){
         int row = a.length;
@@ -34,51 +34,20 @@ public class Bai40 {
             System.out.println();
         }
     }
-    public static int sumRow(int [][]a, int row){
-        int sum = 0;
-        for(int i = 0; i < a[row].length;i++){
-            sum += a[row][i];
-        }
-        return sum;
-    }
-    public static int indexHasMaxSumRow(int [][]a){
-        int row = 0;
-        int maxSum = sumRow(a, row);
-        
-        for(int i = 1; i < a.length; i++){
-            int sum = sumRow(a,i);
-            if(sum > maxSum){
-                row = i;
-                maxSum = sum;
-            }
-        }
-        return row + 1;
-    }
-    
     public static void main(String[] args) {
         int row, col;
         
         do{
-            System.out.print("Row = ");
-            row = sc.nextInt();
+            System.out.print("Row & Column = ");
+            row = col = sc.nextInt();
             if(row <= 0){
-                System.out.println("Input again Row > 0 !!!");
+                System.out.println("Input again Row & Column > 0 !!!");
             }
-        }while(row <= 0);
-        
-        do{
-            System.out.print("Column = ");
-            col = sc.nextInt();
-            if(row <= 0){
-                System.out.println("Input again Column > 0 !!!");
-            }
-        }while(col <= 0);
+        }while(row <= 0);        
         
         int [][]a = new int[row][col];
         input(a);
         System.out.println("Mang vua nhap: ");
         output(a);
-        int index = indexHasMaxSumRow(a);
-        System.out.println("Dong co tong lon nhat: " + index);
     }
 }

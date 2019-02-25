@@ -10,9 +10,9 @@ import java.util.Scanner;
 /**
  *
  * @author genharunari
- * Nhập ma trận n hàng, m cột (n > 0, m > 0). Liệt kê các dòng có tổng lớn nhất
+ * Nhập ma trận n hàng, m cột (n > 0, m > 0). Liệt kê các cột có tổng nhỏ nhất
  */
-public class Bai40 {
+public class Bai41 {
     public static Scanner sc = new Scanner(System.in);
     public static void input(int [][]a){
         int row = a.length;
@@ -34,27 +34,26 @@ public class Bai40 {
             System.out.println();
         }
     }
-    public static int sumRow(int [][]a, int row){
+    public static int sumCol(int [][]a, int col){
         int sum = 0;
-        for(int i = 0; i < a[row].length;i++){
-            sum += a[row][i];
+        for(int i = 0; i < a.length;i++){
+            sum += a[i][col];
         }
         return sum;
     }
-    public static int indexHasMaxSumRow(int [][]a){
-        int row = 0;
-        int maxSum = sumRow(a, row);
+    public static int indexHasMinSumCol(int [][]a){
+        int col = 0;
+        int minSum = sumCol(a, col);
         
-        for(int i = 1; i < a.length; i++){
-            int sum = sumRow(a,i);
-            if(sum > maxSum){
-                row = i;
-                maxSum = sum;
+        for(int i = 1; i < a[0].length; i++){
+            int sum = sumCol(a,i);
+            if(minSum > sum){
+                col = i;
+                minSum = sum;
             }
         }
-        return row + 1;
+        return col + 1;
     }
-    
     public static void main(String[] args) {
         int row, col;
         
@@ -78,7 +77,6 @@ public class Bai40 {
         input(a);
         System.out.println("Mang vua nhap: ");
         output(a);
-        int index = indexHasMaxSumRow(a);
-        System.out.println("Dong co tong lon nhat: " + index);
+        System.out.println("Cot co tong nho nhat: " + indexHasMinSumCol(a));
     }
 }
