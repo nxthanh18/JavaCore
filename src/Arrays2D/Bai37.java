@@ -35,13 +35,15 @@ public class Bai37 {
             System.out.println();
         }
     }
-    public static int sumColumn(int [][]a, int col){
-        int sum = 0;
+    public static int multiplicationColumn(int [][]a, int col){
+        int mil = 1;
         col = col - 1;
         for(int i = 0; i < a.length;i++){
-            sum = sum + a[i][col];
+            if(a[i][col] > 0){
+                mil *= a[i][col];
+            }    
         }
-        return sum;
+        return mil;
     }
     public static void main(String[] args) {
         int row, col;
@@ -68,6 +70,6 @@ public class Bai37 {
         output(a);        
         System.out.print("Nhap cot can tinh: ");
         col = sc.nextInt();
-        System.out.println("Tong cac gia tri trong cot tren la: " + sumColumn(a, col));
+        System.out.println("Tich cac gia tri duong trong cot tren la: " + multiplicationColumn(a, col));
     }
 }
