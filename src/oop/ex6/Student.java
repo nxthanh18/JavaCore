@@ -27,20 +27,23 @@ An 9. Xoa sinh vien < 5 diem
  */
 public class Student {
     String school, name, clasS;
-    float point;
+    private float score;
+    private static int count;
     
     public Student(){
         school = "";
         name = "";
         clasS = "";
-        point = 0;
+        score = 0;
+        count++;
     }
     
-    public Student(String school, String name, String clasS, float point){
+    public Student(String school, String name, String clasS, float score){
         this.school = school;
         this.name = name;
         this.clasS = clasS;
-        this.point = point;
+        this.score = score;
+        count++;
     }
     
     public String getSchool(){
@@ -64,17 +67,21 @@ public class Student {
         this.clasS = clasS;
     }
     
-    public float getPoint(){
-        return point;
+    public float getScore(){
+        return score;
     }
-    public void setPoint(float point){
-        this.point = point;
+    public void setScore(float point){
+        this.score = point;
     }
     
+    public static int getCount(){
+        return count;
+    }
+        
     public void informationStudent(){
         System.out.println("School: " + school);
         System.out.println("Name: " + name);
         System.out.println("Class: " + clasS);
-        System.out.println("Point: " + point);
+        System.out.println("Score: " + score);
     }
 }

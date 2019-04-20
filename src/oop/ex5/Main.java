@@ -18,7 +18,8 @@ public class Main {
         
         fra.displayFration();
         fra.inverse();
-        fra.ToiGian();
+        fra.irreducibleFraction();
+        
         System.out.println(fra.add());
         System.out.println(fra.sub());
         System.out.println(fra.mul());

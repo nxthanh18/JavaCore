@@ -28,18 +28,21 @@ area(): tính diện tích hình tròn
 Viết 1 class có chứa main() để kiểm tra các phương thức của lớp vừa tạo
  */
 public class MyCircle {
-    int mPosX, mPosY, mRas;
+    private int mPosX, mPosY, mRas;
+    private static int count;
     
     public MyCircle(){
         mPosX = 0;
         mPosY = 0;
         mRas = 10;
+        count++;
     }
     
     public MyCircle(int x, int y, int radius){
         mPosX = x;
         mPosY = y;
         mRas = radius;
+        count++;
     }
     
     public void display(){
@@ -65,6 +68,17 @@ public class MyCircle {
     }
     public void setRadius(int radius){
         mRas = radius;
+    }
+    
+    public static int getCount(){
+        return count;
+    }
+    
+    public float distance(MyCircle c){
+        float dx = mPosX - c.getX();
+        float dy = mPosY - c.getY();
+        float dis = (float) (Math.sqrt(dx*dx - dy*dy) - (mRas + c.getRadius()));
+        return dis;
     }
     
     public int acreageCircle(){

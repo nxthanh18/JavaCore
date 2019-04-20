@@ -10,19 +10,22 @@ package oop;
  * @author genharunari
  */
 public class Car {
+    static int count;
     String name, color, product;
     
-    //Mac dinh cho ham dung 1 ten minh mong muon
+    //Mac dinh cho ham dung 1 ten mac dinh cua doi tuong. it nhat phai co 1 ham dung mac dinh
     public Car(){
         name = "";
         color = "";
         product = "";
+        count++;
     }
     
     public Car(String name, String color, String p){
         this.name = name;
         this.color = color;
         product = p;
+        count++;
     }
         
     public Car(String n){
@@ -61,6 +64,10 @@ public class Car {
     
     public void increaseGas(){
         System.out.println("Increase Gas");
+    }
+    
+    public static int getCount(){
+        return count;
     }
 
     @Override

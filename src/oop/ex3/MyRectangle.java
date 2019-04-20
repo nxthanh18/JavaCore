@@ -31,13 +31,15 @@ area(): tính diện tích hình chữ nhật
 Viết hàm 1 class có chứa main() để kiểm tra các phương thức của lớp vừa tạo
  */
 public class MyRectangle {
-    int mPosX, mPosY, mWidth, mHeight;
+    private int mPosX, mPosY, mWidth, mHeight;
+    private static int count;
     
     public MyRectangle(){
         mPosX = 0;
         mPosY = 0;
         mWidth = 100;
         mHeight = 100;
+        count++;
     }
     
     public MyRectangle(int x, int y, int width, int height){
@@ -45,6 +47,7 @@ public class MyRectangle {
         mPosY = y;
         mWidth = width;
         mHeight = height;
+        count++;
     }
     
     public void display(){
@@ -77,6 +80,10 @@ public class MyRectangle {
     }
     public void setHeight(int h){
         mHeight = h;
+    }
+    
+    public static int getCount(){
+        return count;
     }
     
     public int acreageRectangle(){

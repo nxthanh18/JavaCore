@@ -20,18 +20,21 @@ Tính diện tích
 Viết hàm 1 class có chứa main() để kiểm tra các phương thức của lớp vừa tạo
  */
 public class Triangle {
-    int a, b, c;
+    private int a, b, c;
+    private static int count;
     
     public Triangle(){
         a = 1;
         b = 1;
         c = 1;
+        count++;
     }
     
     public Triangle(int a, int b, int c){
         this.a = a;
         this.b = b;
         this.c = c;
+        count++;
     }
     
     public int getA(){
@@ -53,6 +56,10 @@ public class Triangle {
     }
     public void setC(int c){
         this.c = c;
+    }
+    
+    public static int getCount(){
+        return count;
     }
     
     public void displayTriangle(){

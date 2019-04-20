@@ -19,16 +19,19 @@ add, sub, mul, div: tương ứng là hàm cộng, trừ, nhân, chia 2 phân s�
 Viết hàm 1 class có chứa main() để kiểm tra các phương thức của lớp vừa tạo
  */
 public class Fraction {
-    int numerator, denominator;
+    private int numerator, denominator;
+    private static int count;
     
     public Fraction(){
         numerator = 1;
         denominator = 1;
+        count++;
     }
     
     public Fraction(int n, int d){
         numerator = n;
         denominator = d;
+        count++;
     }
     
     public int getNumerator(){
@@ -53,6 +56,10 @@ public class Fraction {
         System.out.println("Inverse Number: " + denominator + "/" + numerator);
     }
     
+    public static int getCount(){
+        return count;
+    }
+    
     public int greatestCommonDivisor(int a,int b){
         if ((a == 0) || (b == 0))
             return a + b;
@@ -66,8 +73,7 @@ public class Fraction {
         return a;
     }
     
-    public void ToiGian()
-    {
+    public void irreducibleFraction(){
         int i = greatestCommonDivisor(numerator, denominator);
         numerator = numerator/i;
         denominator = denominator/i;        

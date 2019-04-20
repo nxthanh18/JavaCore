@@ -19,5 +19,9 @@ public class Main {
         
         car.increaseGas();
         car.useBrake();
+        
+        Car car1 = new Car();
+        
+        System.out.println("Count: " + Car.getCount());
     }
 }

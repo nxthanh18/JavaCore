@@ -25,16 +25,21 @@ distance(MyPoint p1, MyPoint p2): khoảng cách giữa 2 tọa độ p1 và p2
 Viết 1 class có chứa main() để kiểm tra các phương thức của lớp vừa tạo
  */
 public class MyPoint {
-    int mPosX, mPosY;
+    private static int count;
+    private int mPosX, mPosY;
     
+    //Ham dung mac dinh
     public MyPoint(){
         this.mPosX = 0;
         this.mPosY = 0;
+        count++;
     }
     
+    //Ham dung tuong minh
     public MyPoint(int x, int y){
         mPosX = x;
         mPosY = y;
+        count++;
     }
     
     public int getX(){
@@ -51,6 +56,10 @@ public class MyPoint {
         this.mPosY = y;
     }
     
+    public static int getCount(){
+        return count;
+    }
+    
     public void display(){
         System.out.print("(" + this.mPosX + "," + this.mPosY + ")");
     }
@@ -58,6 +67,13 @@ public class MyPoint {
     public float distance(MyPoint p){
         float dx = mPosX - p.getX();
         float dy = mPosY - p.getY();
+        float dis = (float) Math.sqrt(dx*dx - dy*dy);
+        return dis;
+    }
+    
+    public static float distance(MyPoint p1 , MyPoint p2){
+        float dx = p1.getX() - p2.getX();
+        float dy = p2.getY() - p2.getY();
         float dis = (float) Math.sqrt(dx*dx - dy*dy);
         return dis;
     }

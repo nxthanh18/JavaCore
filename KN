@@ -1,0 +1,133 @@
+khối lệnh {}
+đặt biến tên English
+viết thường ký tự đầu
+"Hằng" là giá trị bất biến trong chương trình
+final KDL tenBien GiaTri;
+"\" thêm vào trước ký tự muốn in
+khai báo biến Hằng: viết hoa toàn bộ
+int a = 10;
+int b = 4;
+float c = 1.0f.a/b;
+>> dịch phải 1 bit tương ứng chia 2 (a>>n = a/2^n)
+<< 									(a<<n = a*2^n)
+
+toán tử quan hệ logic trả về kết quả True or False
+
+float a = 10.6f;
+int b = (int)a;
+
+toán tử điều kiện:
+
+a=10
+a=20
+c=(a>b)?a:b;
+c=20
+
+thứ tự ưu tiên
+
+toán tử một ngôi
+toán học và bit
+toán tử quan hệ
+điều kiện và bit
+toán tử điều kiện gán
+
+
+\n : xuống dòng
+%s: chuỗi
+%d: int/ byte/ long
+%c: char
+%f: float
+
+switch (biến) >> biến: số, chuỗi, ký tự
+
+
+git init
+git remote add origin <link>
+git status
+git add .
+git commit -m ""
+git push origin master
+
+Vòng lặp
+
+ghi chú:
+
+lặp giá trị trước while
+thay đổi giá trị của đk sau 1 vòng lặp
+
+while(đk){
+	
+}
+
+for(khởi tạo; đk; tăng / giảm){
+	
+}
+
+phương thức: (Hàm)
+
+public static 'giá trị trả về'	funcName([tham số]){
+	
+	}
+
+	Quy ước đặt tên:-ký tự đầu thường
+					-bắt đầu bằng động từ
+
+	Cách chạy chương trình: bắt đầu từ hàm main
+	Truyền tham số vào hàm
+		tham trị = giá trị (bảng copy): truyền giá trị, bản thân nó ko thay đổi
+
+	Từ khoá 'return':-trả về giá trị của hàm
+					 -chấm dứt hàm. lệnh phía sau không được thực hiện
+	Từ khoá 'break'	:-switch case: kết thúc 1 case
+					 -loops: bẻ gãy vòng lặp
+					 -(vòng lặp lồng nhau)bẻ gãy vòng lặp chứa nó
+
+Mảng n phần từ tính từ 0 đến n-1
+
+byte [] byteArray;
+float [] floatsArray;
+boolean [] booleanArray;
+char [] charArray;
+String [] stringArray;
+
+Ex: int[] b = {10,20,30};
+
+tenBien.length (lấy chiều dài của mảng)
+int [][]a = {{1,2,3},{2,3,4}};
+
+Wrapper
+chuyển kiểu dữ liệu này sang kiểu dữ liệu khác
+int a = Integer.parseInt(“1011”, 2); → 11
+//2 là hệ số ban đầu của giá trị cần chuyển
+//"1011" là giá trị cần chuyển
+vd: num = Integer.parseInt(strNum, 2);
+
+String là 1 hằng và giá trị của nó không sửa đổi được
+s1 == s1; // phép so sánh "==" so sánh địa chỉ, không phải nội dung
+s1.equals(s4); // equals là phép so sánh nội dung
+
+ArrayList
+a.add(10);
+a.add(20); // 10,20
+a.add(1,20);  // 10,30,20
+b.add.(a); //thay a vào vị trí của b
+a.get(2); //tra lai gia tri vi tri 2: 20
+
+#2: Hướng đối tượng
++ đối tượng (Object) là 1 thực thể trong thế giới thực mà chúng ta có thể cảm nhận đc, sờ đc, thấy đc
+	- thuộc tính
+	- hành vi
++ lớp (class) nhiều đối tượng có chung các thuộc tính và hành vi thì tạo thành lớp. từ thuộc tính này chúng ta tạo đc đối tượng
+	- biến: mô tả thuộc tính của đối tượng
+	- hàm: mô tả hành vi của dối tượng
+Hàm dựng (Constructor):
+	- là hàm khởi tạo giá trị ban đầu cho các biến của lớp
+	- là hàm cùng tên với lớp và không có giá trị trả về
+	phân loại(có 2 loại):
+		- hàm dựng mặc định
+		- hàm dựng có tham số
+
++ Biến / hàm (thành viên)
+	-Biến thành viên hay còn gọi là biến của đối tượng là biến dành riêng cho đối tượng đó và truy cập thông qua đối tượng
+	-Hàm thành viên (đối tượng) cũng là hàm dành riêng cho đối tượng đó và truy cập thông qua đối tượng
+	-Ngay khi chương trình bắt đầu chạy. tất cả các biến 'static' được cấp phát vùng nhớ được khởi tạo 1 lần duy nhất và bị huỷ khi chương trình kết thúc ==> truy cập biến 'static' thông qua tên lớp
