@@ -5,6 +5,9 @@
  */
 package oop.ex6;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 /**
@@ -39,27 +42,40 @@ An 8. Viet thuong ten sinh vien
 An 9. Xoa sinh vien < 5 diem
 ----------------------------------------------------------
  */
-public class StudentManagement {
-    public static Scanner sc = new Scanner(System.in);
-    public static void main(String[] args) {
-        int n;
-        Student stu = new Student();
+public class StudentManagement {    
+    ArrayList<Student> mList;
+    
+    public StudentManagement(){
+        mList = new ArrayList<>();
         
-        stu.setSchool("Dai hoc Su Pham");
-        stu.setName("Nguyen Xuan Thanh");
-        stu.setClass("15CNTT2");
-        stu.setScore(7);
-        
-        Student stu1 = new Student();
-        
-        stu1.setSchool("Dai hoc bach khoa");
-        stu1.setName("Nguyen Van A");
-        stu1.setClass("16C7");
-        stu1.setScore(6);
-        
-        stu.informationStudent();
-        
-        System.out.println("--------------------------MENU-----------------------");
+        mList.add(new Student("Michael Jackson", "King Pop Music", 10));
+        mList.add(new Student("Jon Snow", "The King of the North", 9.5f));
+        mList.add(new Student("Night King", "Death King", 8.5f));
+        mList.add(new Student("Kim Joong Un", "North Korea", 7));
+        mList.add(new Student("Donaln Trump", "America", 10));
+        mList.add(new Student("Barack Obama", "America", 8));
+        mList.add(new Student("Ho Chi Minh", "Viet Nam", 5));
+        mList.add(new Student("Le Duan", "Viet Nam", 4));
+        mList.add(new Student("Nguyen Van Linh", "Viet Nam", 3));
+    }
+    
+    public void run(){
+        Scanner sc = new Scanner(System.in);
+        int choose = 0;
+        do{
+            // 1. In Menu
+            printMenu();
+            
+            //2. Nhap chuc nang            
+            choose = sc.nextInt();
+            
+            //3. Xu ly chuc nang
+            process(choose);
+        }while(choose != 0);
+    }
+    
+    public void printMenu(){
+        System.out.println("----------------------------MENU-------------------------");
         System.out.println("An 1. Nhap sinh vien");
         System.out.println("An 2. Hien thi danh sach");
         System.out.println("An 3. Sinh vien co diem cao nhat");
@@ -69,58 +85,148 @@ public class StudentManagement {
         System.out.println("An 7. Viet Hoa ten sinh vien");
         System.out.println("An 8. Viet thuong ten sinh vien");
         System.out.println("An 9. Xoa sinh vien < 5 diem");
-        
-        System.out.print("Nhap chuc nang: ");
-        n = sc.nextInt();
-        
-        switch(n){
-            case 1: 
-                System.out.println("NUMBER 1");
-                System.out.println("Nhap sinh vien");
-                System.out.print("School: ");
-                String school = sc.nextLine();
-                sc.nextLine();
-                System.out.print("Name: ");
-                String name = sc.nextLine();
-                System.out.print("Class: ");
-                String _class = sc.nextLine();
-                System.out.print("Score: ");
-                float score = sc.nextFloat();
-                Student s = new Student(school, _class, name, score);
+        System.out.println("An 0. Thoat chuong trinh ");
+        System.out.println("----------------------------------------------------------");
+        System.out.print("Chon: ");
+    }
+    
+    public void process(int choose){
+        switch(choose){
+            case 0:
+                System.out.println("Tam biet !!!");
                 break;
-            case 2:
-                System.out.println("NUMBER 2");
-                System.out.println("Hien thi danh sach");
-                Student s1 = new Student();
+            case 1: // nhap sinh vien
+                inputStudent();
+                break;
+            case 2: // hien thi danh sach
+                display(mList);
                 break;
             case 3:
-                System.out.println("NUMBER 3");
-                System.out.println("Sinh vien co diem cao nhat");
-                break;
-            case 4:
-                System.out.println("NUMBER 4");
-                System.out.println("Sinh vien co diem thap nhat");
+                displayBestStudents();
                 break;
             case 5:
-                System.out.println("NUMBER 5");
-                System.out.println("Danh sach giam dan theo diem trung binh");
-                break;
+                sortDecreasing();
             case 6:
-                System.out.println("NUMBER 6");
-                System.out.println("Tim kiem");
-                break;
-            case 7:
-                System.out.println("NUMBER 7");
-                System.out.println("Viet Hoa ten sinh vien");
-                break;
-            case 8:
-                System.out.println("NUMBER 8");
-                System.out.println("Viet thuong ten sinh vien");
+                searchByName();
                 break;
             case 9:
-                System.out.println("NUMBER 9");
-                System.out.println("Xoa sinh vien < 5 diem");
+                removeBad();
                 break;
+            default:
+                System.out.println("UNKNOW");
         }
+    }
+    
+    public void inputStudent(){
+        Scanner sc = new Scanner(System.in);
+        
+        String name, _class;
+        float average;
+        
+        System.out.print("Name: ");
+        name = sc.nextLine();
+        
+        System.out.print("Class: ");
+        _class = sc.nextLine();
+        
+        System.out.print("Average: ");
+        average = sc.nextFloat();
+        
+        Student s = new Student(name, _class, average);
+        mList.add(s);
+    }
+    
+    public void display(ArrayList<Student> list){
+        System.out.printf("%-20s %-20s %-20s\n", "HO VA TEN", "LOP", "DIEM");
+        if(list.size() == 0){
+            System.out.println("Khong co phan tu nao");
+            return;
+        }
+        for(Student s: list){
+            System.out.println(s.toString());
+        }
+    }
+    
+    public void searchByName(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhap tu khoa: ");
+        String keyword = sc.nextLine();
+        
+        ArrayList<Student> list = searchByName(keyword);
+        display(list);
+    }
+    
+    public ArrayList<Student> searchByName(String keyword){
+        ArrayList<Student> list = new ArrayList<>();
+        for(Student s: mList){
+            String nameLowcase = s.getName().toLowerCase();
+            String keyWordLowCase = keyword.toLowerCase();
+            if(nameLowcase.contains(keyWordLowCase)) list.add(s);
+        }
+        return list;
+    }
+    
+    public void displayBestStudents(){
+        ArrayList<Student> list = getBestStudent();
+        display(list);
+    }
+    
+    public ArrayList<Student> getBestStudent(){
+        // get max score
+        Student max = mList.get(0);
+        for(int i = 1; i < mList.size(); i++){
+            Student s = mList.get(i);
+            if(max.getScore() < s.getScore()){
+                max = s;
+            }
+        }
+        
+        //get all max list
+        ArrayList<Student> list = new ArrayList<>();
+        for(int i = 0; i < mList.size(); i++){
+            Student s = mList.get(i);
+            if(s.getScore() == max.getScore()){
+                list.add(s);
+            }
+        }
+        return list;
+    }
+    
+    public void sortDecreasing(){
+        Comparator compare = new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                float v = o1.getScore() - o2.getScore();
+                if(v < 0){
+                    return 1;
+                }else if(v == 0){
+                    return o1.getName().compareTo(o2.getName());
+                }else{
+                    return -1;
+                }
+            }
+        };
+        
+        Collections.sort(mList, compare);
+        display(mList);
+    }
+    
+    public void removeBad(){
+//        int i = 0;
+//        while(i < mList.size()){
+//            Student s = mList.get(i);
+//            if(s.getScore() < 5){
+//                mList.remove(i);
+//            }else{
+//                i++;
+//            }
+//        }
+        for(int i = mList.size() - 1; i >= 0 ; i--){
+            Student s = mList.get(i);
+            if(s.getScore() < 5){
+                mList.remove(i);
+            }
+        }
+        display(mList);
     }
 }

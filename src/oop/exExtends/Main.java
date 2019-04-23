@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package oop.ex6;
+package oop.exExtends;
 
 /**
  *
  * @author genharunari
  */
-class stu {
-    
+public class Main {
+    public static void main(String[] args) {
+        Employee e = new Employee("ACB", "Da Nang", 23, 3000) {};
+        
+        e.display();
+    }
 }

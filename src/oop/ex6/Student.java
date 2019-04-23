@@ -26,62 +26,76 @@ An 8. Viet thuong ten sinh vien
 An 9. Xoa sinh vien < 5 diem
  */
 public class Student {
-    String school, name, clasS;
+    private String name, clasS;
     private float score;
     private static int count;
-    
-    public Student(){
-        school = "";
-        name = "";
-        clasS = "";
-        score = 0;
-        count++;
-    }
-    
-    public Student(String school, String name, String clasS, float score){
-        this.school = school;
+        
+    public Student(String name, String clasS, float score){
         this.name = name;
         this.clasS = clasS;
         this.score = score;
         count++;
     }
-    
-    public String getSchool(){
-        return school;
-    }
-    public void setSchool(String school){
-        this.school = school;
-    }
-    
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name = name;
     }
-    
-    public String getClasS(){
+
+    public String getClasS() {
         return clasS;
     }
-    public void setClass(String clasS){
+
+    public void setClasS(String clasS) {
         this.clasS = clasS;
     }
-    
-    public float getScore(){
+
+    public float getScore() {
         return score;
     }
-    public void setScore(float point){
-        this.score = point;
+
+    public void setScore(float score) {
+        this.score = score;
     }
-    
-    public static int getCount(){
+
+    public static int getCount() {
         return count;
     }
-        
-    public void informationStudent(){
-        System.out.println("School: " + school);
-        System.out.println("Name: " + name);
-        System.out.println("Class: " + clasS);
-        System.out.println("Score: " + score);
+
+    public static void setCount(int count) {
+        Student.count = count;
     }
+    
+//    public String getName(){
+//        return name;
+//    }
+//    public void setName(String name){
+//        this.name = name;
+//    }
+//    
+//    public String getClasS(){
+//        return clasS;
+//    }
+//    public void setClass(String clasS){
+//        this.clasS = clasS;
+//    }
+//    
+//    public float getScore(){
+//        return score;
+//    }
+//    public void setScore(float point){
+//        this.score = point;
+//    }
+//    
+//    public static int getCount(){
+//        return count;
+//    }
+
+    @Override
+    public String toString() {
+        return String.format("%-20s %-20s %-20f", name, clasS, score);
+    }    
 }

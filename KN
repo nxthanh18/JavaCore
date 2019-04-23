@@ -131,3 +131,16 @@ Hàm dựng (Constructor):
 	-Biến thành viên hay còn gọi là biến của đối tượng là biến dành riêng cho đối tượng đó và truy cập thông qua đối tượng
 	-Hàm thành viên (đối tượng) cũng là hàm dành riêng cho đối tượng đó và truy cập thông qua đối tượng
 	-Ngay khi chương trình bắt đầu chạy. tất cả các biến 'static' được cấp phát vùng nhớ được khởi tạo 1 lần duy nhất và bị huỷ khi chương trình kết thúc ==> truy cập biến 'static' thông qua tên lớp
+
+Kế thừa(đặc tính):
+	- lớp mới kế thừa lớp cũ. lớp mới(lớp con), lớp cũ(lớp cha)
+	- lớp con kế thừa tất cả các đặc tính từ (lớp cha) trừ hàm dựng và 'private'
+	(lớp cha chạy trước xong đến lớp con, huỷ ngược lại)
+	-Override: lớp con viết lại lớp cha
+		- khi viết lại 1 hàm của lớp cha thì phải giống hoàn toàn lớp cha
+		- phạm vi truy cập phải mạnh hơn
+	- Hàm ảo là hàm không có thân hàm và có từ khoá 'abstract' ở phía trước
+	- Lớp ảo là
+		- lớp chứa ít nhất 1 hàm ảo
+		- lớp ảo không tạo ra đối tượng
+	- Lớp con kế thừa lớp ảo phải Override lại toàn bộ hàm ảo
