@@ -42,9 +42,7 @@ public class Teacher extends Person{
     private int salary;
     
     public Teacher(){
-        name = "";
-        sex = "";
-        age = 0;
+        super();
         salary = 0;
     }
 

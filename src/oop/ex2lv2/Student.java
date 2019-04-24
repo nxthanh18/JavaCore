@@ -43,9 +43,7 @@ public class Student extends Person{
     private float average;
 
     public Student() {
-        name = "";
-        sex = "";
-        age = 0;
+        super();
         _class = "";
         average = 0;
     }
