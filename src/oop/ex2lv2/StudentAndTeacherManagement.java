@@ -58,12 +58,26 @@ public class StudentAndTeacherManagement {
         tList.add(new Teacher ("Cersei Lannister", "Female", 35, 10000));
     }
     
+    private int inputIntegerNumber(){
+        Scanner sc = new Scanner(System.in);
+        //while(true) vong lap lien tuc.
+        while(true){
+            String strNum = sc.nextLine();
+            try{
+                int n = Integer.parseInt(strNum);
+                return n;
+            }catch(Exception e){
+                System.out.print("Please input integer number: ");
+            }
+        }
+    }
+    
     public void run(){
         Scanner sc = new Scanner(System.in);
         int choose = 0;
         do{
             printMenu();
-            choose = sc.nextInt();
+            choose = inputIntegerNumber();
             process(choose);
         }while(choose != 5);
     }
@@ -100,6 +114,40 @@ public class StudentAndTeacherManagement {
         }
     }
     
+    private int inputAge(){
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            String strNum = sc.nextLine();
+            try{
+                int n = Integer.parseInt(strNum);
+                if(n < 0 || n > 100){
+                    System.out.print("Please input 0 < age < 100 : ");
+                }else{
+                    return n;
+                }
+            }catch(Exception e){
+                System.out.print("Please input age number: ");
+            }
+        }
+    }
+    
+    private float inputAverage(){
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            String strNum = sc.nextLine();
+            try{
+                float n = Float.parseFloat(strNum);
+                if(n < 0 || n > 10){
+                    System.out.print("Please input 0 < average < 10 :");
+                }else{
+                    return n;
+                }
+            }catch(Exception e){
+                System.out.print("Please input 0 < average < 10 : ");
+            }
+        }
+    }
+    
     public void inputStudent(){
         Scanner sc = new Scanner(System.in);
         
@@ -114,14 +162,14 @@ public class StudentAndTeacherManagement {
         sex = sc.nextLine();
         
         System.out.print("Age: ");
-        age = sc.nextInt();
+        age = inputAge();
         
         System.out.print("Class: ");
         _class = sc.nextLine();
-        sc.nextLine();
+        //sc.nextLine();
         
         System.out.print("Average: ");
-        average = sc.nextFloat();
+        average = inputAverage();
         
         Student s = new Student(name, sex, age, _class, average);
         sList.add(s);
@@ -140,7 +188,7 @@ public class StudentAndTeacherManagement {
         sex = sc.nextLine();
         
         System.out.print("Age: ");
-        age = sc.nextInt();
+        age = inputAge();
         
         System.out.print("Salary: ");
         salary = sc.nextInt();

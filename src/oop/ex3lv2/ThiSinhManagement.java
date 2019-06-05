@@ -39,12 +39,25 @@ public class ThiSinhManagement {
         list.add(new ThiSinh ("Tywin Lannister", 9.5f, 2.2f, 3.6f));
     }
     
+    private int inputIntegerNumber(){
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            String strNum = sc.nextLine();
+            try{
+                int n = Integer.parseInt(strNum);
+                return n;
+            }catch(Exception e){
+                System.out.print("Please input integer number: ");
+            }
+        }
+    }
+    
     public void run(){
         Scanner sc = new Scanner(System.in);
         int choose = 0;
         do{
             printMenu();
-            choose = sc.nextInt();
+            choose = inputIntegerNumber();
             process(choose);
         }while(choose != 0);
     }
@@ -82,6 +95,23 @@ public class ThiSinhManagement {
         }
     }
     
+    private float inputScore(){
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            try{
+                String strNum = sc.nextLine();
+                float n = Float.parseFloat(strNum);
+                if(n < 0 || n > 10){
+                    System.out.print("Please input 0 < Score < 10: ");
+                }else{
+                    return n;
+                }
+            }catch(Exception e){
+                System.out.print("Please input score number: ");
+            }
+        }
+    }
+    
     public void inputStudent(){
         Scanner sc = new Scanner(System.in);
         
@@ -92,13 +122,13 @@ public class ThiSinhManagement {
         name = sc.nextLine();
         
         System.out.print("SCORE MATH: ");
-        scoreM = sc.nextFloat();
+        scoreM = inputScore();
         
         System.out.print("SCORE PHYSICAL: ");
-        scoreP = sc.nextFloat();
+        scoreP = inputScore();
         
         System.out.print("SCORE CHEMISTRY: ");
-        scoreC = sc.nextFloat();
+        scoreC = inputScore();
         
         ThiSinh ts = new ThiSinh(name, scoreM, scoreP, scoreC);
         list.add(ts);

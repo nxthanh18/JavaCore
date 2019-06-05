@@ -132,6 +132,8 @@ Hàm dựng (Constructor):
 	-Hàm thành viên (đối tượng) cũng là hàm dành riêng cho đối tượng đó và truy cập thông qua đối tượng
 	-Ngay khi chương trình bắt đầu chạy. tất cả các biến 'static' được cấp phát vùng nhớ được khởi tạo 1 lần duy nhất và bị huỷ khi chương trình kết thúc ==> truy cập biến 'static' thông qua tên lớp
 
+4 đặc điểm của hướng đối tượng:
+
 Kế thừa(đặc tính):
 	- lớp mới kế thừa lớp cũ. lớp mới(lớp con), lớp cũ(lớp cha)
 	- lớp con kế thừa tất cả các đặc tính từ (lớp cha) trừ hàm dựng và 'private'
@@ -144,3 +146,30 @@ Kế thừa(đặc tính):
 		- lớp chứa ít nhất 1 hàm ảo
 		- lớp ảo không tạo ra đối tượng
 	- Lớp con kế thừa lớp ảo phải Override lại toàn bộ hàm ảo
+
+Trừu tượng : (hàm ảo) là cái khó nói...
+
+Đóng gói: viết lớp và tạo ra đối tượng. đối tượng đc bảo mật (private, public, protected)
+
+Đa hình: một đối tượng phản ứng lại một tác động với nhiều hình thức khác nhau
+	-Override: viết lại hoàn toàn lớp cha, phạm vi truy cập mạnh hơn
+	-Overriding Method: ghi lại phương thức, lớp con ghi lại lớp cha
+	-Overloading Method: hàm trùng tên nhưng khác nhau về tham số truyền vào
+	-Liên kết tĩnh là liên kết được thực hiện khi biên dịch
+		(Ex: Overloading Method)
+	-Liênt kết động là liên kết khi chương trình đang chạy
+		(Ex: Overriding Method)
+
+Từ khoá 'final': (có tính quyết định)
+	- biến là một biến hằng
+	- lớp này là lớp hằng và không có lớp con, không được kế thừa
+	- hằng gọi là hàm hằng. không thể override lại được
+
+interface là 1 thoả thuận giữa các bên để làm theo 1 chuẩn
+	- không có hàm dựng
+	- không tạo ra đối tượng
+	- chỉ có static và final
+	- mặc định trong interface biến là public, final, static.
+
+lớp lồng nhau tăng tính bảo mật nhưng khó kiểm soát về mã nguồn (ít khi viết)
+

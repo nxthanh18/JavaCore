@@ -59,6 +59,19 @@ public class StudentManagement {
         mList.add(new Student("Nguyen Van Linh", "Viet Nam", 3));
     }
     
+    private int inputintegerNumber(){
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            String strNum = sc.nextLine();
+            try{
+                int n = Integer.parseInt(strNum);
+                return n;
+            }catch(Exception e){
+                System.out.print("Please input integer number: ");
+            }
+        }
+    }
+    
     public void run(){
         Scanner sc = new Scanner(System.in);
         int choose = 0;
@@ -67,7 +80,7 @@ public class StudentManagement {
             printMenu();
             
             //2. Nhap chuc nang            
-            choose = sc.nextInt();
+            choose = inputintegerNumber();
             
             //3. Xu ly chuc nang
             process(choose);
@@ -117,6 +130,23 @@ public class StudentManagement {
         }
     }
     
+    private float inputAverage(){
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            String strNum = sc.nextLine();
+            try{
+                float n = Float.parseFloat(strNum);
+                if(n < 0 || n > 10){
+                    System.out.print("Score in range 0 - 10: ");
+                }else{
+                    return n;
+                }
+            }catch(Exception e){
+                System.out.print("Please input average > 0 & < 10: ");
+            }
+        }
+    }
+    
     public void inputStudent(){
         Scanner sc = new Scanner(System.in);
         
@@ -130,20 +160,24 @@ public class StudentManagement {
         _class = sc.nextLine();
         
         System.out.print("Average: ");
-        average = sc.nextFloat();
+        average = inputAverage();
         
         Student s = new Student(name, _class, average);
         mList.add(s);
     }
     
     public void display(ArrayList<Student> list){
-        System.out.printf("%-20s %-20s %-20s\n", "HO VA TEN", "LOP", "DIEM");
+        System.out.printf("%-5s %-20s %-20s %-20s\n", "ID", "HO VA TEN", "LOP", "DIEM");
         if(list.size() == 0){
             System.out.println("Khong co phan tu nao");
             return;
         }
-        for(Student s: list){
-            System.out.println(s.toString());
+//        for(Student s: list){
+//            System.out.println(s.toString());
+//        }
+        for(int i = 0; i < list.size(); i++){
+            Student s = list.get(i);
+            System.out.printf("%-5d %s\n", (i + 1), s.toString());
         }
     }
     
